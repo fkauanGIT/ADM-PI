@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -44,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 20),
                 const Text(
                   'Faça login na sua \nconta.',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Color(0xFF2D7A3E)),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -168,20 +167,17 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     _buildSocialButton(
-                      icon: FontAwesomeIcons.google,
-                      color: const Color(0xFF4285F4),
+                      icon: Image.asset('assets/icons/Google.png', width: 24, height: 24),
                       onPressed: () {},
                     ),
                     const SizedBox(width: 20),
                     _buildSocialButton(
-                      icon: FontAwesomeIcons.facebook,
-                      color: const Color(0xFF1877F2),
+                      icon: Image.asset('assets/icons/facebook.png', width: 24, height: 24),
                       onPressed: () {},
                     ),
                     const SizedBox(width: 20),
                     _buildSocialButton(
-                      icon: FontAwesomeIcons.apple,
-                      color: Colors.black,
+                      icon: Image.asset('assets/icons/Iphone.png', width: 24, height: 24),
                       onPressed: () {},
                     ),
                   ],
@@ -221,20 +217,23 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildSocialButton({
-    required IconData icon,
-    required Color color,
+    required Widget icon,
     required VoidCallback onPressed,
   }) {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         shape: const CircleBorder(),
-        padding: const EdgeInsets.all(18), // Aumenta o tamanho do botão
+        padding: const EdgeInsets.all(18),
         side: const BorderSide(
           color: Color(0xFF2D7A3E),
-        ), // Define a cor da borda
+        ),
       ),
-      child: FaIcon(icon, color: color),
+      child: SizedBox(
+        width: 24,
+        height: 24,
+        child: icon,
+      ),
     );
   }
 }

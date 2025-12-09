@@ -37,6 +37,9 @@ dependencies:
 
   # For using Font Awesome icons
   font_awesome_flutter: ^10.7.0
+  
+  # For SVG support
+  flutter_svg: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -58,3 +61,9 @@ flutter:
   
   assets:
     - assets/imagem/
+    - assets/icons/Google.png
+    - assets/icons/facebook.png
+    - assets/icons/Iphone.png
+    - assets/icons/google_icon.svg
+    - assets/icons/facebook_icon.svg
+    - assets/icons/apple_icon.svg
